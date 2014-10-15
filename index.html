@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="flipApp">
+<head>
+	<title>Card Flip</title>
+	<link type="text/css" rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+	<script src="main.js"></script>
+</head>
+<body>
+	<div class="top">
+		Test Your Memory!
+	</div>
+	<div ng-controller="FlipController">
+
+		<div class="gameBoard">		
+
+			<div id="play" ng-repeat="card in cards">
+				<div class="container" ng-click="flip(card, $index)" >
+
+					<div class="wrapper" ng-class="{turn: card.status==true}">
+						<div class="front">
+							<img src="images/question-mark.png">
+						</div>
+						<div class="back">
+							<img src={{card.image}}>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+		<div class="bottom">
+			<h1>Guesses: {{trys}}</h1>
+		</div>
+
+	</div>
+
+
+</body>
+</html>
