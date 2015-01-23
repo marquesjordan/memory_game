@@ -29,7 +29,7 @@ flipApp.controller("FlipController", function ($scope, $timeout){
 	];
 
 	$scope.shuffle = function(o){ //v1.0
-	    for($scope.j, $scope.x, $scope.i = o.length; $scope.i; $scope.j = Math.floor(Math.random() * $scope.i), $scope.x = o[--$scope.i], o[$scope.i] = o[$scope.j], o[$scope.j] = $scope.x);
+	    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
 	    return o;
 	};
 
